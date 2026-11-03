@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pupuy.2 | Live2D Commission</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  </head>
+  <body id="top">
+    <div class="bg" id="bg" aria-hidden="true"></div>
+    <header class="hd">
+      <a href="#top" class="brand" id="brand"></a>
+      <div class="hd-r">
+        <span id="socials" class="soc"></span
+        ><button
+          id="themeBtn"
+          class="tb"
+          aria-label="Ganti mode terang/gelap"
+        ></button>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="hero"></section>
+      <section class="cm" id="commission">
+        <div class="box" id="cmBox">
+          <div class="cm-img" id="cmImg"></div>
+          <div class="cm-info">
+            <div class="pr-row">
+              <h2 id="cmPrice"></h2>
+              <div class="sw-w">
+                <small id="swHint"></small
+                ><button id="cmSw" class="sw"></button>
+              </div>
+            </div>
+            <ul class="ft" id="cmFt"></ul>
+            <div class="ad">
+              <div class="mini">
+                <h3 id="addT"></h3>
+                <ul id="cmAdd"></ul>
+              </div>
+              <div class="mini">
+                <h3 id="dontT"></h3>
+                <ul id="cmDont"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wk" id="works">
+        <h2 id="wkT"></h2>
+        <div id="wkRows"></div>
+      </section>
+    </main>
+    <footer class="ft-bar">
+      <span id="fTxt"></span><span id="fNote"></span>
+    </footer>
+    <dialog id="lb" class="lb" aria-label="Pratinjau karya">
+      <div class="lb-in">
+        <button type="button" class="lb-x" id="lbX" aria-label="Tutup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img class="lb-img" id="lbImg" alt="" />
+        <a class="lb-link" id="lbLink" href="#" target="_blank" rel="noopener"
+          ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+          ><span id="lbTxt"></span
+        ></a>
+      </div>
+    </dialog>
+    <script src="config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
