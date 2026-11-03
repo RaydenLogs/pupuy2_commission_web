@@ -29,8 +29,8 @@ window.SITE_CONFIG = {
   // go: "commission" → scroll ke kartu harga, card = nomor kartu di `commissions` (mulai 0)
   // go: "works"      → scroll ke Karya Lainnya
   hero: [
-    { image: "assets/images/hero1.jpg", label: "L2D Chibi", go: "commission", card: 0 },
-    { image: "assets/images/hero2.jpg", label: "L2D Normal", go: "commission", card: 1 },
+    { image: "assets/images/hero1.jpg", label: "L2D Chibi", go: "commission", card: 1 },
+    { image: "assets/images/hero2.jpg", label: "L2D Normal", go: "commission", card: 0 },
     { image: "assets/images/hero3.jpg", label: "Karya Lainnya", go: "works" }
   ],
 
