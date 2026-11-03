@@ -1,10 +1,11 @@
+// render
 (() => {
   const C = SITE_CONFIG, $ = s => document.querySelector(s), root = document.documentElement;
   const esc = s => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
   const img = (src, label) => `<div class="ph" data-l="${esc(label)}">${src ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>`;
   const li = a => a.map(t => `<li>${esc(t)}</li>`).join('');
 
-  // Tema
+  // theme
   function theme(t) {
     root.dataset.theme = t;
     for (const k in C.colors[t]) root.style.setProperty('--' + k, C.colors[t][k]);
@@ -17,16 +18,16 @@
   $('#themeBtn').onclick = () => theme(root.dataset.theme === 'dark' ? 'light' : 'dark');
   theme(saved || C.defaultTheme);
 
-  // Header
+  // socials
   $('#socials').innerHTML = C.socials.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.name)}" title="${esc(s.name)}"><i class="${esc(s.icon)}" aria-hidden="true"></i></a>`).join('');
 
-  // Hero
+  // hero
   $('#hero').innerHTML = C.hero.map((h, i) => `<a class="hi" href="#${h.go}" data-i="${i}">${img(h.image, 'IMG' + (i + 1))}<span class="cap">${esc(h.label)}</span></a>`).join('');
   document.querySelectorAll('.hi').forEach(a => a.addEventListener('click', () => {
     const h = C.hero[a.dataset.i]; if (h.go === 'commission') setCard(h.card);
   }));
 
-  // Commission (flip)
+  // pricing card
   const L = C.labels; let cur = 0;
   $('#swHint').textContent = L.switchHint; $('#addT').textContent = L.add; $('#dontT').textContent = L.dont;
   function fill(i) {
@@ -37,14 +38,14 @@
   }
   function setCard(i) {
     if (i === cur) return; cur = i;
-    $('#cmSw').classList.toggle('alt', i % 2 === 1); // border: kartu 1 pink, kartu 2 biru, dst (selalu sinkron)
+    $('#cmSw').classList.toggle('alt', i % 2 === 1); // sync border
     const b = $('#cmBox'); b.classList.add('out');
     setTimeout(() => { fill(i); b.classList.replace('out', 'in'); setTimeout(() => b.classList.remove('in'), 350); }, 300);
   }
   fill(0);
   $('#cmSw').onclick = () => setCard((cur + 1) % C.commissions.length);
 
-  // Karya Lainnya: marquee bergantian arah, klik tile buka pratinjau + link postingan
+  // gallery
   const W = C.works, igUrl = (C.socials.find(s => /instagram/i.test(s.name)) || C.socials[0]).url;
   const item = w => typeof w === 'string' ? { src: w } : (w || {});
   $('#wkT').textContent = W.title; let rowsNow = 0;
@@ -64,7 +65,7 @@
   }
   works(); addEventListener('resize', works);
 
-  // Pratinjau (dialog bawaan browser: Escape + focus sudah ditangani)
+  // modal
   const lb = $('#lb'), lbImg = $('#lbImg');
   $('#lbTxt').textContent = L.post;
   $('#lbX').onclick = () => lb.close();
@@ -75,10 +76,10 @@
     $('#lbLink').href = w.dataset.url; lb.showModal();
   });
 
-  // Footer
+  // footer
   $('#fTxt').textContent = C.footer.text.replace('{year}', new Date().getFullYear()); $('#fNote').textContent = C.footer.note;
 
-  // Background lucu
+  // bg
   const bg = $('#bg');
   for (let i = 0; i < C.background.count; i++) {
     const s = document.createElement('span');
@@ -87,7 +88,7 @@
     bg.appendChild(s);
   }
 
-  // Reveal saat scroll
+  // reveal
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('on')), { threshold: .15 });
   document.querySelectorAll('.cm,.wk').forEach(e => { e.classList.add('rv'); io.observe(e); });
 })();

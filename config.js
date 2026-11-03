@@ -1,46 +1,37 @@
-// ============================================================
-//  KONFIGURASI UTAMA — ubah isi web & warna di file ini saja.
-//  Urutan: 1 Umum · 2 Warna · 3 Sosmed · 4 Hero · 5 Harga
-//          6 Karya Lainnya · 7 Background · 8 Footer
-// ============================================================
+// config
 window.SITE_CONFIG = {
 
-  // ---------- 1. UMUM ----------
-  brand: "Pupuy.2",                       // teks logo di header
-  title: "Pupuy.2 | Live2D Commission",   // judul tab browser
-  defaultTheme: "light",                  // "light" | "dark" (pilihan pengguna tersimpan di browser)
+  // general
+  brand: "Pupuy.2", // brand
+  title: "Pupuy.2 | Live2D Commission", // title
+  defaultTheme: "light", // default theme
 
-  // ---------- 2. WARNA ----------
-  // pink & blue = aksen · bg = latar · surface = panel · card = placeholder gambar
+  // colors
   colors: {
     light: { pink: "#ff6fa5", blue: "#7ec8f2", bg: "#f6f6f8", surface: "#ffffff", card: "#ebebf0", text: "#ff6fa5", muted: "#65656e" },
     dark: { pink: "#ff8fbd", blue: "#8ecdf0", bg: "#0b0b0e", surface: "#151519", card: "#1e1e24", text: "#f6f6f8", muted: "#a2a2ac" }
   },
 
-  // ---------- 3. SOSMED (icon = class Font Awesome) ----------
-  // Link "Instagram" juga jadi tujuan default tombol popup jika sebuah karya tidak punya url.
+  // socials
   socials: [
     { name: "Instagram", icon: "fa-brands fa-instagram", url: "https://www.instagram.com/pupuy.2/" },
-    // { name: "Discord",   icon: "fa-brands fa-discord",   url: "https://discord.com/users/ID_ATAU_INVITE" },
-    // { name: "WhatsApp",  icon: "fa-brands fa-whatsapp",  url: "https://wa.me/628XXXXXXXXXX" }
+    { name: "Discord",   icon: "fa-brands fa-discord",   url: "https://discord.com/users/ID_ATAU_INVITE" },
+    { name: "WhatsApp",  icon: "fa-brands fa-whatsapp",  url: "https://wa.me/628XXXXXXXXXX" }
   ],
 
-  // ---------- 4. HERO (3 gambar miring) ----------
-  // go: "commission" → scroll ke kartu harga, card = nomor kartu di `commissions` (mulai 0)
-  // go: "works"      → scroll ke Karya Lainnya
+  // hero
   hero: [
     { image: "assets/images/hero1.jpg", label: "L2D Chibi", go: "commission", card: 1 },
     { image: "assets/images/hero2.jpg", label: "L2D Normal", go: "commission", card: 0 },
     { image: "assets/images/hero3.jpg", label: "Karya Lainnya", go: "works" }
   ],
 
-  // ---------- 5. HARGA (kartu yang di-switch) ----------
-  // Border tombol switch bergantian: kartu ke-1 pink, ke-2 biru, ke-3 pink, dst.
+  // labels
   labels: {
-    switchHint: "Click to Switch",   // teks kecil di bawah tombol
-    add: "Add",               // judul kotak tambahan
-    dont: "Don't",             // judul kotak larangan
-    post: "Lihat di Instagram" // teks tombol di popup Karya Lainnya
+    switchHint: "Click to Switch", // switch hint
+    add: "Add", // add label
+    dont: "Don't", // no label
+    post: "Lihat di Instagram" // modal label
   },
   commissions: [
     {
@@ -57,15 +48,11 @@ window.SITE_CONFIG = {
     }
   ],
 
-  // ---------- 6. KARYA LAINNYA (auto-scroll) ----------
-  // Klik gambar → popup + tombol "Lihat di Instagram".
-  // Tiap karya:  { src: "path gambar", url: "link postingan IG", alt: "deskripsi (opsional)" }
-  //   • url kosong  → tombol ke profil Instagram di `socials`
-  //   • cukup string "path.jpg" kalau tidak perlu url/alt
-  // Jumlah wadah mengikuti jumlah gambar, minimal `minSlots`.
+  // gallery
   works: {
     title: "Karya Lainnya",
     images: [
+      // sample item
       // { src: "assets/images/karya1.jpg", url: "https://www.instagram.com/p/AAAAAAA/", alt: "Karya 1" },
       // { src: "assets/images/karya2.jpg", url: "https://www.instagram.com/p/BBBBBBB/" },
       // "assets/images/karya3.jpg",
@@ -90,14 +77,14 @@ window.SITE_CONFIG = {
       { src: "assets/images/karya19.webp", url: "https://www.instagram.com/pupuy.2/p/DYkP-8PPoIm/" },
       { src: "assets/images/karya20.webp", url: "https://www.instagram.com/pupuy.2/p/DYkQBkZPGuA/" },
     ],
-    minSlots: 10,        // jumlah wadah minimum (yang kosong tampil sebagai placeholder)
-    secondsPerImage: 5   // detik per gambar; makin kecil makin cepat
+    minSlots: 10, // min slots
+    secondsPerImage: 5 // speed
   },
 
-  // ---------- 7. BACKGROUND (simbol melayang) ----------
+  // bg
   background: { symbols: ["♥", "✦", "★", "✿", "♡"], count: 18 },
 
-  // ---------- 8. FOOTER ({year} otomatis jadi tahun berjalan) ----------
+  // footer
   footer: {
     text: "© {year} Pupuy.2 — All rights reserved.",
     note: ""

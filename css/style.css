@@ -1,9 +1,10 @@
+/* styles */
 :root {
   --h: 76px;
   --r-xl: 30px;
   --r-lg: 22px;
   --r-md: 16px;
-  /* neutral shadow shades: white body in light mode, black body in dark mode */
+  /* shadows */
   --sh-out: 9px 9px 20px #d6d6de, -9px -9px 20px #fff;
   --sh-out-sm: 6px 6px 14px #d6d6de, -6px -6px 14px #fff;
   --sh-in: inset 4px 4px 9px rgba(0, 0, 0, .10), inset -4px -4px 9px rgba(255, 255, 255, .95);
@@ -52,14 +53,14 @@ img {
   max-width: 100%
 }
 
-/* keyboard focus stays solid black/white: the pink accent fails 3:1 on both surfaces */
+/* focus */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--text);
   outline-offset: 3px
 }
 
-/* tombol switch: ring fokus memakai warna kebalikan border (pink<->biru), tidak hitam */
+/* switch focus */
 .sw:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 5px
@@ -69,7 +70,7 @@ button:focus-visible {
   outline-color: var(--pink)
 }
 
-/* header floats as one raised neumorphic bar */
+/* header */
 .hd {
   position: fixed;
   top: 10px;
@@ -161,7 +162,7 @@ section {
   margin-bottom: clamp(48px, 7vw, 84px)
 }
 
-/* floating symbols, kept faint so the soft surfaces stay readable */
+/* float */
 .bg {
   position: fixed;
   inset: 0;
@@ -170,7 +171,7 @@ section {
   pointer-events: none
 }
 
-/* pink and blue bloom: the only colour wash on the black/white body */
+/* glow */
 .bg::before,
 .bg::after {
   content: "";
@@ -220,7 +221,7 @@ html[data-theme="dark"] .bg::after {
   }
 }
 
-/* section 1: three slices, gaps run parallel to the clip edges */
+/* hero */
 .hero {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -251,7 +252,7 @@ html[data-theme="dark"] .bg::after {
   z-index: 2
 }
 
-/* outline is clipped by the panel shape, so focus marks the image inside instead */
+/* image focus */
 .hi:focus-visible .ph::after,
 button.w:focus-visible .ph::after {
   content: "";
@@ -323,7 +324,7 @@ button.w:focus-visible .ph::after {
   object-fit: cover
 }
 
-/* section 2: card, kept square-ish image left and text column right */
+/* pricing */
 .box {
   display: grid;
   grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
@@ -436,7 +437,7 @@ h2#cmPrice {
   border-color: var(--blue)
 }
 
-/* signal waves: two fading pill rings alternate pink/blue so the switch catches the eye */
+/* pulse */
 .sw::before,
 .sw::after {
   content: "";
@@ -527,7 +528,7 @@ h2#cmPrice {
   color: var(--text)
 }
 
-/* section 3: each row is an inset groove so the moving tiles read as raised */
+/* gallery */
 .wk h2 {
   text-align: center;
   font-size: clamp(1.7rem, 3.4vw, 2.5rem);
@@ -628,7 +629,7 @@ button.w {
   transform: none
 }
 
-/* preview dialog */
+/* modal */
 .lb[open] {
   position: fixed;
   inset: 0;
