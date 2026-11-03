@@ -15,8 +15,8 @@ window.SITE_CONFIG = {
   // socials
   socials: [
     { name: "Instagram", icon: "fa-brands fa-instagram", url: "https://www.instagram.com/pupuy.2/" },
-    { name: "Discord",   icon: "fa-brands fa-discord",   url: "https://discord.com/users/ID_ATAU_INVITE" },
-    { name: "WhatsApp",  icon: "fa-brands fa-whatsapp",  url: "https://wa.me/628XXXXXXXXXX" }
+    // { name: "Discord",   icon: "fa-brands fa-discord",   url: "https://discord.com/users/ID_ATAU_INVITE" },
+    // { name: "WhatsApp",  icon: "fa-brands fa-whatsapp",  url: "https://wa.me/628XXXXXXXXXX" }
   ],
 
   // hero
