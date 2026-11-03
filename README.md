@@ -23,3 +23,5 @@ Website statis (1 halaman) untuk commission Live2D Pupuy.2: HTML + CSS + JS murn
 3. Tambah karya: isi `works.images`, mis. `["assets/images/k1.jpg", {src:"assets/images/k2.jpg", url:"https://instagram.com/p/XXXX"}]`. `url` dipakai tombol popup, `alt` opsional. Lebih dari 10 → otomatis bertambah.
 4. Warna: ubah `colors.light` / `colors.dark`.
 5. Buka `index.html` di browser (butuh internet untuk Font Awesome & Google Fonts).
+
+Whatsapp: 0821-8530-4102
